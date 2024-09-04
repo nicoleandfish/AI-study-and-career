@@ -1,3 +1,24 @@
+#### 20240904 No2860. 让所有学生保持开心的分组方法数
+![image](https://github.com/user-attachments/assets/1f9c873e-6178-466f-95ef-ff886c85d8fc)
+
+```
+class Solution(object):
+    def countWays(self, nums):
+        if not nums:
+            return 0
+        nums.sort()
+        happy_count = 0
+        if nums[0] > 0:
+            happy_count = 1
+        for i in range(len(nums)):
+            if i >= nums[i]:
+                if i == len(nums) -1 or i+1 < nums[i+1]:
+                    happy_count += 1
+        return happy_count
+```
+
+
+
 ##### 20240903 No2708. 一个小组的最大实力值
 ![image](https://github.com/user-attachments/assets/dded0a3b-e274-4240-bf93-6daa9806010e)
 ```
